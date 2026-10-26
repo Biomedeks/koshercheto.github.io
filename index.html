@@ -1,303 +1,1356 @@
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Кошерчето от пчеларска ферма Гуделов — подаръчен комплект с пчелен мед и прашец.">
-  <title>Кошерчето | Натурален вкус. Естествен произход.</title>
-  <style>
+
+    <title>Кошерчето | Натурален вкус. Естествен произход.</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    
+<style>
     :root {
-      --honey: #b77b28;
-      --honey-dark: #80521c;
-      --cream: #fbf7ef;
-      --paper: #f0e7d8;
-      --ink: #352b20;
-      --muted: #746858;
-      --line: #ded1bd;
-      --white: #fffdf9;
+        --cream: #fbf7ef;
+        --beige: #f0e7d8;
+        --paper: #fffdf9;
+        --honey: #b77b28;
+        --honey-dark: #80521c;
+        --ink: #352b20;
+        --muted: #746858;
+        --line: #ded1bd;
+        --green: #4f7d4a;
+        --green-hover: #3f663b;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 25px;
+    }
+
     body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
     }
-    a { color: var(--honey-dark); }
-    .topline { height: 5px; background: var(--honey); }
-    header {
-      padding: 22px 5vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255,253,249,.92);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.3;
     }
-    .brand { font-size: 1.35rem; letter-spacing: .12em; font-weight: bold; }
-    .brand small {
-      display: block; font-size: .68rem; letter-spacing: .16em;
-      color: var(--muted); font-weight: normal;
+
+    p {
+        color: var(--muted);
+        line-height: 1.85;
     }
-    nav { display: flex; gap: 22px; flex-wrap: wrap; font: 600 .88rem Arial, sans-serif; }
-    nav a { text-decoration: none; }
+
+    a {
+        transition: color .25s ease, background-color .25s ease,
+                    border-color .25s ease, transform .25s ease;
+    }
+
+    #main,
+    #main .inner {
+        background: transparent;
+    }
+
+    /* ЛОГО */
+    #header {
+        padding: 48px 20px !important;
+        background: transparent;
+        text-align: center;
+    }
+
+    #header .logo {
+        margin: 0;
+        text-align: center;
+    }
+
+    #header .logo .site-title {
+        margin: 0 0 10px;
+        color: #fff !important;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 1px;
+    }
+
+    #header .logo .site-tagline {
+        display: block;
+        color: #fff !important;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+
+    /* ПЪРВА СНИМКА И НАВИГАЦИЯ */
+    #one > .image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #one > header {
+        padding: 30px 20px 40px;
+        background: var(--cream);
+        text-align: center;
+    }
+
+    #one > header .brand {
+        padding: 10px 15px 20px;
+        text-align: center;
+    }
+
+    #one > header .brand .farm-brand {
+        display: inline-block;
+        color: var(--honey-dark);
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 1.6;
+    }
+
+    #one > header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    #one > header nav a {
+        display: inline-block;
+        padding: 11px 22px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: .82rem;
+        font-weight: 600;
+        letter-spacing: .5px;
+    }
+
+    #one > header nav a:hover {
+        border-color: var(--honey-dark);
+        background: var(--honey-dark);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* ПЪРВА СЕКЦИЯ */
     .hero {
-      display: grid; grid-template-columns: 1.05fr .95fr;
-      min-height: 510px;
-      background: linear-gradient(115deg, #f6eddd, #fffaf2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 55px;
+        padding: 80px 6% !important;
+        background: var(--cream);
     }
-    .hero-copy { padding: clamp(38px, 7vw, 92px); align-self: center; }
-    .eyebrow {
-      color: var(--honey-dark); font: bold .78rem Arial, sans-serif;
-      letter-spacing: .18em; text-transform: uppercase;
+
+    .hero-copy {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
     }
-    h1 { font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: 1.02; margin: 16px 0; font-weight: normal; }
-    h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.15; font-weight: normal; margin: 0 0 18px; }
-    h3 { font-size: 1.35rem; margin: 0 0 8px; }
-    .subtitle { font-size: clamp(1.15rem, 2vw, 1.55rem); color: var(--honey-dark); }
-    p { margin: 0 0 16px; }
+
+    .eyebrow,
+    .section-eyebrow {
+        margin-bottom: 18px;
+        color: var(--honey-dark);
+        font-size: .78rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        line-height: 1.6;
+        text-transform: uppercase;
+    }
+
+    .hero-copy h1 {
+        margin: 0 0 12px;
+        color: var(--ink);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        margin-bottom: 25px;
+        color: var(--honey-dark);
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .hero-copy p {
+        max-width: 650px;
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+
     .hero-image {
-      min-height: 390px; background: #e5d7c1;
-      display: flex; align-items: center; justify-content: center; padding: 24px;
+        display: flex;
+        flex: 0 0 43%;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
     }
-    .photo { display: block; width: 100%; height: 100%; object-fit: cover; }
+
     .hero-image .photo {
-      width: 100%; max-width: 560px; aspect-ratio: 4/5;
-      object-fit: cover; border: 1px solid var(--line);
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border: 9px solid var(--beige);
+        box-sizing: border-box;
     }
-    .photo-box .photo { aspect-ratio: 4/3; object-fit: cover; }
-    .gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
-    .gallery img:first-child { aspect-ratio: 4/5; }
-    .btn {
-      display: inline-block; margin-top: 12px; padding: 13px 23px;
-      background: var(--honey-dark); color: white; text-decoration: none;
-      font: bold .9rem Arial, sans-serif; border-radius: 2px;
-      border: 0; cursor: pointer;
+
+    /* БУТОНИ */
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
     }
-    .btn:hover { background: var(--honey); }
-    .certificate-btn { background: #49633b; margin-left: 8px; }
-    .certificate-btn:hover { background: #34492a; }
-    section { padding: 72px 7vw; }
-    .section-intro { max-width: 780px; margin: 0 auto 36px; text-align: center; }
-    .section-intro p { color: var(--muted); }
-    .contents {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
-      max-width: 1120px; margin: auto;
+
+    .hero-buttons .btn {
+        display: inline-block;
+        margin: 0;
+        padding: 13px 22px;
+        border: 1px solid var(--honey-dark);
+        background: var(--honey-dark);
+        color: #fff;
+        text-decoration: none;
+        font-size: .82rem;
+        font-weight: 700;
+        letter-spacing: .3px;
     }
-    .item { background: var(--white); border: 1px solid var(--line); padding: 24px; }
-    .item .number { color: var(--honey); font-size: 2rem; margin-bottom: 10px; }
-    .item p { color: var(--muted); }
-    .story { background: var(--paper); }
-    .story-inner { max-width: 940px; margin: auto; }
-    .story-inner p { font-size: 1.06rem; }
-    .split {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 42px;
-      align-items: center; max-width: 1120px; margin: auto;
+
+    .hero-buttons .btn:hover {
+        border-color: var(--honey);
+        background: var(--honey);
+        color: white;
+        transform: translateY(-2px);
     }
-    .photo-box {
-      min-height: 300px; padding: 24px; display: flex;
-      align-items: center; justify-content: center; background: #e5d7c1;
+
+    .hero-buttons .certificate-btn {
+        border-color: var(--green);
+        background: var(--green);
+        color: white;
     }
-    .details { background: var(--white); }
-    .details-list { list-style: none; padding: 0; margin: 22px 0 0; }
-    .details-list li { border-bottom: 1px solid var(--line); padding: 11px 0; }
-    .details-list strong { display: inline-block; min-width: 155px; }
-    .gallery {
-      display: grid; grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 16px; max-width: 1120px; margin: auto;
+
+    .hero-buttons .certificate-btn:hover {
+        border-color: var(--green-hover);
+        background: var(--green-hover);
     }
-    .closing { background: #473822; color: #fff7e9; text-align: center; }
-    .closing p { max-width: 720px; margin: 0 auto 18px; }
-    .closing .subtitle { color: #e9c17e; }
-    footer {
-      padding: 30px 6vw; background: #2e251b; color: #e9ddca;
-      text-align: center; font: .88rem/1.8 Arial, sans-serif;
+
+    /* ОБЩИ СЕКЦИИ */
+    .content-section,
+    .farm-section,
+    .natural-section,
+    .final-section {
+        padding: 85px 6%;
     }
-    footer a { color: #f0c77f; }
-    .contact-area { background: var(--cream); padding: 76px 7%; }
-    .contact-grid {
-      max-width: 1120px; margin: auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; align-items: start;
+
+    .content-section .section-inner {
+        max-width: 900px;
+        margin: 0 auto;
     }
-    .contact-form { display: grid; gap: 10px; margin-top: 22px; }
-    .contact-form label { font-size: .9rem; font-weight: 600; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; border: 1px solid #d8d0c2; border-radius: 8px;
-      padding: 12px 14px; font: inherit; background: #fffdf9; color: #29372b;
+
+    .content-section h2,
+    .farm-section h2,
+    .natural-section h2,
+    .final-section h2 {
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
     }
-    .contact-form textarea { resize: vertical; }
-    .form-note { font-size: .78rem; opacity: .75; line-height: 1.5; }
-    .map-wrap iframe {
-      width: 100%; min-height: 350px; border: 0;
-      border-radius: 12px; display: block;
+
+    /* ПОДАРЪК С ХАРАКТЕР */
+    .story-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0;
+        background: var(--beige) !important;
     }
-    .map-link { display: inline-block; margin-top: 12px; color: #385b3d; font-weight: 600; }
-    .copyright-notice {
-      font-size: .72rem; line-height: 1.6; opacity: .7;
-      max-width: 1000px; margin: 12px auto 0; text-align: center;
+
+    .story-wrapper .inner,
+    .story-wrapper .section-inner {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 55px 6%;
+        box-sizing: border-box;
+        background: transparent !important;
     }
-    @media (max-width: 760px) {
-      header { align-items: flex-start; flex-direction: column; }
-      nav { gap: 12px; }
-      .hero, .split { grid-template-columns: 1fr; }
-      .hero-copy { padding: 42px 7vw; }
-      .hero-image { min-height: 300px; }
-      section { padding: 50px 6vw; }
-      .contents, .contact-grid { grid-template-columns: 1fr; }
-      .contact-grid { gap: 36px; }
-      .gallery { grid-template-columns: 1fr 1fr; }
-      .gallery img:first-child { aspect-ratio: 1/1; }
-      .gallery img:last-child { grid-column: 1 / -1; }
-      .details-list strong { display: block; min-width: 0; }
+
+    .story-intro {
+        text-align: center;
     }
-  </style>
+
+    .story-wrapper .story-intro h2 {
+        margin: 0 0 22px;
+        color: var(--ink);
+    }
+
+    .story-wrapper .story-intro p {
+        max-width: 850px;
+        margin: 0 auto;
+        color: var(--muted);
+    }
+
+    /* СЪДЪРЖАНИЕ НА КОМПЛЕКТА */
+    .products-section {
+        padding: 90px 5%;
+        border-top: 1px solid var(--line);
+        background: var(--paper) !important;
+        color: var(--ink);
+    }
+
+    .products-section h2,
+    .products-section h3 {
+        color: var(--ink);
+    }
+
+    .products-header,
+    .gallery-header {
+        max-width: 850px;
+        margin: 0 auto 45px;
+        text-align: center;
+    }
+
+    .products-header h2,
+    .gallery-header h2 {
+        margin-bottom: 20px;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .products-header p,
+    .gallery-header p {
+        margin-bottom: 0;
+    }
+
+    .products-grid {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        flex: 1;
+        min-width: 0;
+        padding: 32px 28px;
+        border: 1px solid var(--line);
+        background: #fff;
+        box-sizing: border-box;
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(53, 43, 32, .09);
+    }
+
+    .product-number {
+        margin-bottom: 18px;
+        color: var(--honey-dark);
+        font-size: .8rem;
+        letter-spacing: 3px;
+    }
+
+    .product-card h3 {
+        margin: 0 0 18px;
+        font-size: 1.3rem;
+    }
+
+    .product-card p {
+        margin-bottom: 16px;
+        font-size: .96rem;
+    }
+
+    .product-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ИСТОРИЯ НА ФЕРМАТА */
+    .farm-section {
+        border-top: 1px solid var(--line);
+        background: var(--beige);
+    }
+
+    .farm-content {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .farm-content p {
+        margin-bottom: 22px;
+    }
+
+    .farm-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ЕСТЕСТВЕНА ВИЗИЯ */
+    .natural-section {
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+    }
+
+    .natural-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .natural-text,
+    .natural-image {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .natural-text p {
+        margin-bottom: 20px;
+    }
+
+    .natural-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    .natural-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 9px solid var(--beige);
+        box-sizing: border-box;
+    }
+
+    /* ГАЛЕРИЯ */
+    .gallery-section {
+        padding: 90px 5%;
+        border-top: 1px solid var(--line);
+        background: var(--beige) !important;
+        color: var(--ink);
+    }
+
+    .gallery-section h2 {
+        color: var(--ink);
+    }
+
+    .gallery-grid {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        background: var(--paper);
+    }
+
+    .gallery-item img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        transition: transform .35s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.035);
+    }
+
+    /* ФИНАЛНА СЕКЦИЯ */
+    .final-section {
+        border-top: 1px solid var(--line);
+        background: var(--cream);
+        text-align: center;
+    }
+
+    .final-content {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .final-content p {
+        margin-bottom: 20px;
+    }
+
+    .final-signature {
+        margin: 30px 0 22px;
+        color: var(--honey-dark);
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    /* FOOTER */
+    #footer {
+        padding: 25px 20px;
+        background: var(--ink);
+        color: #fff;
+        text-align: center;
+    }
+
+    #footer .copyright {
+        color: #e8ddce;
+        font-size: .85rem;
+    }
+
+    /* TABLET */
+    @media screen and (max-width: 900px) {
+        .hero {
+            flex-direction: column;
+            gap: 40px;
+            padding: 60px 30px !important;
+        }
+
+        .hero-copy {
+            text-align: center;
+        }
+
+        .hero-copy p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            flex: none;
+            width: 100%;
+        }
+
+        .hero-image .photo {
+            max-width: 450px;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .products-grid,
+        .gallery-grid {
+            flex-direction: column;
+        }
+
+        .product-card {
+            width: 100%;
+        }
+
+        .natural-content {
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .natural-text {
+            text-align: center;
+        }
+
+        .natural-image {
+            width: 100%;
+        }
+    }
+
+    /* ТЕЛЕФОН */
+    @media screen and (max-width: 480px) {
+        #header {
+            padding: 32px 15px !important;
+        }
+
+        #header .logo .site-title {
+            font-size: 1.8rem;
+        }
+
+        #header .logo .site-tagline {
+            font-size: .85rem;
+            letter-spacing: 1px;
+        }
+
+        #one > header {
+            padding: 25px 15px 30px;
+        }
+
+        #one > header nav {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 8px;
+        }
+
+        #one > header nav a {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .hero {
+            padding: 42px 20px !important;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .hero-buttons .btn {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .story-wrapper .story-intro {
+            padding: 38px 22px;
+        }
+
+        .content-section,
+        .products-section,
+        .farm-section,
+        .natural-section,
+        .gallery-section,
+        .final-section {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .product-card {
+            padding: 28px 22px;
+        }
+    }
+
+/* ФОРМА ЗА КОНТАКТ И GOOGLE MAPS */
+.contact-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    max-width: 1150px;
+    margin: 55px auto 0;
+    text-align: left;
+}
+
+.contact-form-wrap,
+.contact-map-wrap {
+    min-width: 0;
+    padding: 30px;
+    background: #fffdf9;
+    border: 1px solid #ded1bd;
+    box-sizing: border-box;
+}
+
+.contact-layout h3 {
+    margin: 0 0 25px;
+    color: #352b20;
+    font-size: 1.4rem;
+}
+
+.contact-form-wrap form {
+    margin: 0;
+}
+
+.contact-form-wrap label {
+    display: block;
+    margin: 18px 0 7px;
+    color: #352b20;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.contact-form-wrap input,
+.contact-form-wrap textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid #ded1bd;
+    border-radius: 0;
+    background: #fff;
+    color: #352b20;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.contact-form-wrap input:focus,
+.contact-form-wrap textarea:focus {
+    outline: 2px solid #b77b28;
+    outline-offset: 1px;
+}
+
+.contact-form-wrap textarea {
+    resize: vertical;
+}
+
+.contact-submit {
+    display: inline-block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 20px;
+    border: 1px solid #80521c;
+    background: #80521c;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.contact-submit:hover {
+    background: #b77b28;
+}
+
+.contact-map-wrap > p {
+    margin-bottom: 20px;
+}
+
+.contact-map {
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+    background: #f0e7d8;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #80521c;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    color: #b77b28;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-top: 35px;
+    }
+
+    .contact-form-wrap,
+    .contact-map-wrap {
+        padding: 22px;
+    }
+
+    .contact-map {
+        height: 320px;
+    }
+}
+</style>
 </head>
+
+
 <body>
-  <div class="topline"></div>
-  <header>
-    <div class="brand">КОШЕРЧЕТО <small>ПЧЕЛАРСКА ФЕРМА „ГУДЕЛОВ“</small></div>
-    <nav aria-label="Основна навигация">
-      <a href="#about">За комплекта</a>
-      <a href="#products">Съдържание</a>
-      <a href="#story">Нашата история</a>
-      <a href="#contact">Контакти</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="about" style="padding:0">
-      <div class="hero-copy">
-        <div class="eyebrow">Подарък от пчелите</div>
-        <h1>Кошерчето</h1>
-        <div class="subtitle">Натурален вкус. Естествен произход.</div>
-        <p style="margin-top:22px">Един красив подарък, който събира богатството на пчелния свят — пчелен мед, пчелен прашец и внимателно подбрани детайли в естествена дървена кутия.</p>
-        <a class="btn" href="#products">Какво има в комплекта?</a>
-        <a class="btn certificate-btn" href="https://github.com/Biomedeks/koshercheto.github.io/tree/main/Laboratory%20test%20results" target="_blank" rel="noopener noreferrer">Сертификат за качество</a>
-      </div>
-      <div class="hero-image">
-        <img class="photo" src="images/koshercheto-box.png" alt="Дървената подаръчна кутия Кошерчето в горска среда">
-      </div>
-    </section>
 
-    <section>
-      <div class="section-intro">
-        <div class="eyebrow">Малък жест, истинска история</div>
-        <h2>Подарък с характер</h2>
-        <p>„Кошерчето“ съчетава автентичен вкус, семейна традиция и отношение към детайла. Създадено е за хората, които ценят природата, българските пчелни продукти и красивите, смислени подаръци.</p>
-      </div>
-    </section>
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
 
-    <section class="details" id="products">
-      <div class="section-intro">
-        <div class="eyebrow">Какво съдържа</div>
-        <h2>Три малки съкровища от пчелния свят</h2>
-        <p>Всеки елемент е подбран така, че да допълва останалите и да превръща комплекта в завършен подарък.</p>
-      </div>
-      <div class="contents">
-        <article class="item">
-          <div class="number">01</div>
-          <h3>Чист пчелен мед</h3>
-          <p>Медът е един от най-познатите дарове на пчелите. Неговите цвят, аромат и вкус зависят от растенията, от които пчелите събират нектар, и от сезона.</p>
-          <p>Подходящ е за закуска, за подслаждане на напитки и за добавяне към кисело мляко, овесени ядки и десерти.</p>
-        </article>
-        <article class="item">
-          <div class="number">02</div>
-          <h3>Две шишенца пчелен прашец</h3>
-          <p>Пчелите събират прашец от цветовете на растенията и го пренасят до кошера. Естественото му разнообразие от цветове и нюанси отразява разнообразието на растителния свят.</p>
-          <p>Може да се добавя към храни според личните предпочитания и указанията за употреба на продукта.</p>
-        </article>
-        <article class="item">
-          <div class="number">03</div>
-          <h3>Дървена лъжичка</h3>
-          <p>Малък, практичен детайл, който допълва натуралната визия на комплекта. Дървото, стъклото и крафт елементите създават хармонично и завършено представяне.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="story" id="story">
-      <div class="story-inner">
-        <div class="eyebrow">Пчеларска ферма „Гуделов“</div>
-        <h2>Традиция, предавана през поколенията</h2>
-        <p>Зад „Кошерчето“ стои пчеларска ферма „Гуделов“ — семейство с повече от век история в пчеларството. Нашата връзка с пчелите се гради през поколенията, а отношението ни към тях остава непроменено — с уважение към естествения им ритъм и средата, в която се развиват.</p>
-        <p>Пчелин № 6255-0171 се намира в горска местност Коруча. Това е мястото, с което свързваме произхода на продуктите в „Кошерчето“. Влагаме знания, опит и постоянна грижа, за да подходим отговорно към пчелните семейства и добива на пчелните продукти.</p>
-        <p>Вярваме, че качеството започва много преди продуктът да стигне до трапезата — с грижата за пчелите, вниманието при добива и отговорността към всяка стъпка от процеса.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="split">
-        <div>
-          <div class="eyebrow">Естествена визия</div>
-          <h2>Красотата е в детайлите</h2>
-          <p>Дървената кутия, стъклените съдове, крафт хартията и канапът оформят композиция, вдъхновена от природата и традиционното пчеларство.</p>
-          <p>„Кошерчето“ е подходящо за рожден ден, имен ден, празник, гостуване, благодарност към близък човек или корпоративен подарък с български характер.</p>
+<header id="header">
+    <div class="logo">
+        <div class="site-title">Кошерчето</div>
+        <div class="site-tagline">
+            Натурален вкус. Естествен произход.
         </div>
-        <div class="photo-box">
-          <img class="photo" src="images/koshercheto-open-box.png" alt="Отворено дървено Кошерче с мед и пчелен прашец в горски пчелин">
-        </div>
-      </div>
-    </section>
-
-    <section class="details">
-      <div class="section-intro">
-        <div class="eyebrow">Поглед отблизо</div>
-        <h2>Галерия на „Кошерчето“</h2>
-        <p>Дървената кутия, пчелният мед, прашецът и малките детайли на подаръчния комплект.</p>
-      </div>
-      <div class="gallery">
-        <img src="images/koshercheto-open-box.png" alt="Отворен комплект Кошерчето">
-        <img src="images/honey-pollen-spoon.jpg" alt="Пчелен мед, две шишенца пчелен прашец и дървена лъжичка">
-        <img src="images/koshercheto-set-forest.png" alt="Подаръчният комплект Кошерчето сред дърветата">
-      </div>
-    </section>
-
-    <section class="closing" id="contact">
-      <div class="eyebrow" style="color:#e9c17e">От нашия пчелин до Вашия дом</div>
-      <h2>Кошерчето — богатството на пчелния свят, поднесено с грижа.</h2>
-      <p>С грижа към пчелите. С уважение към природата. С традиция от поколения.</p>
-      <p><strong>Пчеларска ферма „Гуделов“</strong></p>
-      <p>За поръчки и въпроси използвайте контактната форма по-долу. Ще се свържем с Вас възможно най-скоро.</p>
-    </section>
-  </main>
-
-  <section class="contact-area" aria-labelledby="contact-title">
-    <div class="contact-grid">
-      <div>
-        <div class="eyebrow">Свържете се с нас</div>
-        <h2 id="contact-title">Контакт и поръчки</h2>
-        <p>Имате въпрос за „Кошерчето“ или желаете да направите поръчка? Изпратете ни съобщение.</p>
-        <form class="contact-form" action="https://formsubmit.co/biomedeks@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Ново запитване от Кошерчето">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://biomedeks.github.io/koshercheto.github.io/">
-          <input type="hidden" name="_captcha" value="true">
-          <label for="contact-name">Име</label>
-          <input id="contact-name" name="Име" autocomplete="name" required placeholder="Вашето име">
-          <label for="contact-email">Имейл</label>
-          <input id="contact-email" name="Имейл" type="email" autocomplete="email" required placeholder="name@example.com">
-          <label for="contact-message">Съобщение</label>
-          <textarea id="contact-message" name="Съобщение" rows="4" required placeholder="С какво можем да помогнем?"></textarea>
-          <button class="btn" type="submit">Изпрати запитване</button>
-          <p class="form-note">Съобщението ще бъде изпратено до екипа на „Кошерчето“. При първоначалното активиране услугата може да изпрати имейл за потвърждение на адреса получател.</p>
-        </form>
-      </div>
-      <div class="map-wrap">
-        <h3>Фирма Биомедекс ЕООД</h3>
-        <iframe title="Местоположение на пчелина в Google Maps" src="https://maps.google.com/maps?q=42.133928,25.052082&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <a class="map-link" href="https://www.google.com/maps?q=42.133928,25.052082" target="_blank" rel="noopener noreferrer">Отвори в Google Maps ↗</a>
-      </div>
     </div>
-  </section>
+</header>
 
-  <footer>
-    <div>© Пчеларска ферма „Гуделов“ · „Кошерчето“</div>
-    <div>Пчелин № 6255-0171 · Горска местност Коруча</div>
-    <div><a href="#about">Към началото ↑</a></div>
-    <div class="copyright-notice">Copyright (c) 2026 Biomedeks LTD . All Rights Reserved. This software and all associated files are proprietary and confidential. Unauthorized copying, modification, or distribution of this file, via any medium, is strictly prohibited.</div>
-  </footer>
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <section id="main">
+
+        <div class="inner">
+
+
+            <!-- =================================================
+                 ПЪРВА СНИМКА
+                 ================================================= -->
+
+            <section id="one" class="wrapper style1">
+
+                <div class="image fit flush">
+
+                    <img
+                        src="images/pic02.jpg"
+                        alt=""
+                    />
+
+                </div>
+
+
+                <!-- =================================================
+                     НАВИГАЦИЯ
+                     ================================================= -->
+
+                <header>
+
+<div class="brand">
+    <span class="farm-brand">
+        ПЧЕЛАРСКА ФЕРМА „ГУДЕЛОВ“
+    </span>
+</div>
+
+
+                    <nav aria-label="Основна навигация">
+
+                        <a href="#about">
+                            За комплекта
+                        </a>
+
+                        <a href="#products">
+                            Съдържание
+                        </a>
+
+                        <a href="#story">
+                            Нашата история
+                        </a>
+
+                        <a href="#contact">
+                            Контакти
+                        </a>
+
+                    </nav>
+
+                </header>
+
+
+                <!-- =================================================
+                     HERO
+                     ================================================= -->
+
+                <main>
+
+                    <section
+                        class="hero"
+                        id="about"
+                    >
+
+                        <div class="hero-copy">
+
+                            <div class="eyebrow">
+                                Подарък от пчелите
+                            </div>
+
+                            <h1>
+                                Кошерчето
+                            </h1>
+
+                            <div class="subtitle">
+                                Натурален вкус. Естествен произход.
+                            </div>
+
+                            <p>
+                                Един красив подарък, който събира
+                                богатството на пчелния свят —
+                                пчелен мед, пчелен прашец и
+                                внимателно подбрани детайли в
+                                естествена дървена кутия.
+                            </p>
+
+
+                            <div class="hero-buttons">
+
+                                <a
+                                    class="btn"
+                                    href="#products"
+                                >
+                                    Какво има в комплекта?
+                                </a>
+
+
+                                <a
+                                    class="btn certificate-btn"
+                                    href="https://github.com/Biomedeks/koshercheto.github.io/blob/main/Laboratory%20test%20results/Laboratory%20test%20results%20lot%2009-11.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Сертификат за качество
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-image">
+
+                            <img
+                                class="photo"
+                                src="images/koshercheto-box.png"
+                                alt="Дървената подаръчна кутия Кошерчето"
+                            />
+
+                        </div>
+
+                    </section>
+
+                </main>
+
+            </section>
+
+
+            <!-- =================================================
+                 ПОДАРЪК С ХАРАКТЕР
+                 ================================================= -->
+
+            
+<section class="wrapper content-section story-wrapper">
+
+    <div class="section-inner story-intro">
+
+        <div class="section-eyebrow">
+            Малък жест, истинска история
+        </div>
+
+        <h2>Подарък с характер</h2>
+
+        <p>
+            „Кошерчето“ съчетава автентичен вкус,
+            семейна традиция и отношение към детайла.
+            Създадено е за хората, които ценят природата,
+            българските пчелни продукти и красивите,
+            смислени подаръци.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+            <!-- =================================================
+                 КАКВО СЪДЪРЖА
+                 ================================================= -->
+
+            <section
+                id="products"
+                class="wrapper style2 products-section"
+            >
+
+                <div class="products-header">
+
+                    <div class="section-eyebrow">
+                        Какво съдържа комплекта
+                    </div>
+
+                    <h2>
+                        Три малки съкровища от пчелния свят
+                    </h2>
+
+                    <p>
+                        Всеки елемент е подбран така, че да допълва
+                        останалите и да превръща комплекта
+                        в завършен подарък.
+                    </p>
+
+                </div>
+
+
+                <div class="products-grid">
+
+
+                    <!-- 01 -->
+
+                    <div class="product-card">
+
+                        <div class="product-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Чист пчелен мед
+                        </h3>
+
+                        <p>
+                            Медът е един от най-познатите дарове
+                            на пчелите. Неговите цвят, аромат и вкус
+                            зависят от растенията, от които пчелите
+                            събират нектар, и от сезона.
+                        </p>
+
+                        <p>
+                            Подходящ е за закуска, за подслаждане
+                            на напитки и за добавяне към кисело
+                            мляко, овесени ядки и десерти.
+                        </p>
+
+                    </div>
+
+
+                    <!-- 02 -->
+
+                    <div class="product-card">
+
+                        <div class="product-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Две шишенца пчелен прашец
+                        </h3>
+
+                        <p>
+                            Пчелите събират прашец от цветовете
+                            на растенията и го пренасят до кошера.
+                            Естественото му разнообразие от цветове
+                            и нюанси отразява разнообразието
+                            на растителния свят.
+                        </p>
+
+                        <p>
+                            Може да се добавя към храни според
+                            личните предпочитания и указанията
+                            за употреба на продукта.
+                        </p>
+
+                    </div>
+
+
+                    <!-- 03 -->
+
+                    <div class="product-card">
+
+                        <div class="product-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Дървена лъжичка
+                        </h3>
+
+                        <p>
+                            Малък, практичен детайл, който допълва
+                            натуралната визия на комплекта.
+                            Дървото, стъклото и крафт елементите
+                            създават хармонично и завършено
+                            представяне.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ИСТОРИЯ
+                 ================================================= -->
+
+            <section
+                id="story"
+                class="wrapper farm-section"
+            >
+
+                <div class="farm-content">
+
+                    <div class="section-eyebrow">
+                        Пчеларска ферма „Гуделов“
+                    </div>
+
+                    <h2>
+                        Традиция, предавана през поколенията
+                    </h2>
+
+                    <p>
+                        Зад „Кошерчето“ стои пчеларска ферма
+                        „Гуделов“ — семейство с повече от век история
+                        в пчеларството. Нашата връзка с пчелите се
+                        гради през поколенията, а отношението ни към
+                        тях остава непроменено — с уважение към
+                        естествения им ритъм и средата, в която
+                        се развиват.
+                    </p>
+
+                    <p>
+                        Пчелин № 6255-0171 се намира в горска местност
+                        Коруча. Това е мястото, с което свързваме
+                        произхода на продуктите в „Кошерчето“.
+                        Влагаме знания, опит и постоянна грижа,
+                        за да подходим отговорно към пчелните семейства
+                        и добива на пчелните продукти.
+                    </p>
+
+                    <p>
+                        Вярваме, че качеството започва много преди
+                        продуктът да стигне до трапезата — с грижата
+                        за пчелите, вниманието при добива и
+                        отговорността към всяка стъпка от процеса.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ЕСТЕСТВЕНА ВИЗИЯ
+                 ================================================= -->
+
+            <section
+                class="wrapper natural-section"
+            >
+
+                <div class="natural-content">
+
+
+                    <div class="natural-text">
+
+                        <div class="section-eyebrow">
+                            Естествена визия
+                        </div>
+
+                        <h2>
+                            Красотата е в детайлите
+                        </h2>
+
+                        <p>
+                            Дървената кутия, стъклените съдове,
+                            крафт хартията и канапът оформят
+                            композиция, вдъхновена от природата
+                            и традиционното пчеларство.
+                        </p>
+
+                        <p>
+                            „Кошерчето“ е подходящо за рожден ден,
+                            имен ден, празник, гостуване, благодарност
+                            към близък човек или корпоративен подарък
+                            с български характер.
+                        </p>
+
+                    </div>
+
+
+                    <div class="natural-image">
+
+                        <img
+                            src="images/1.png"
+                            alt="Отворената кутия Кошерчето"
+                        />
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ГАЛЕРИЯ
+                 ================================================= -->
+
+            <section
+                id="gallery"
+                class="wrapper style2 gallery-section"
+            >
+
+                <div class="gallery-header">
+
+                    <div class="section-eyebrow">
+                        Поглед отблизо
+                    </div>
+
+                    <h2>
+                        Галерия на „Кошерчето“
+                    </h2>
+
+                    <p>
+                        Дървената кутия, пчелният мед,
+                        прашецът и малките детайли
+                        на подаръчния комплект.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/p001.png"
+                            alt="Кошерчето — снимка 1"
+                        />
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/p002.png"
+                            alt="Кошерчето — снимка 2"
+                        />
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="images/p003.png"
+                            alt="Кошерчето — снимка 3"
+                        />
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ФИНАЛ
+                 ================================================= -->
+
+           
+<section id="contact" class="wrapper final-section">
+    <div class="final-content">
+
+        <div class="section-eyebrow">
+            От нашия пчелин до Вашия дом
+        </div>
+
+        <h2>Кошерчето — богатството на пчелния свят, поднесено с грижа.</h2>
+
+        <p>
+            С грижа към пчелите. С уважение към природата.
+            С традиция от поколения.
+        </p>
+
+        <div class="final-signature">
+            Пчеларска ферма „Гуделов“
+        </div>
+
+        <p>
+            За поръчки и въпроси използвайте контактната форма.
+            Ще се свържем с Вас възможно най-скоро.
+        </p>
+
+    </div>
+
+    <div class="contact-layout">
+
+        <div class="contact-form-wrap">
+            <h3>Изпратете ни съобщение</h3>
+
+            <form action="https://formsubmit.co/biomedeks@gmail.com"
+                  method="POST">
+
+                <input type="hidden" name="_subject"
+                       value="Ново запитване от сайта Кошерчето">
+
+                <input type="hidden" name="_captcha" value="true">
+
+                <input type="hidden" name="_template" value="table">
+
+                <label for="contact-name">Вашето име</label>
+                <input type="text" id="contact-name" name="Име"
+                       placeholder="Въведете име" required>
+
+                <label for="contact-email">Имейл адрес</label>
+                <input type="email" id="contact-email" name="Имейл"
+                       placeholder="name@example.com" required>
+
+                <label for="contact-phone">Телефон (по желание)</label>
+                <input type="tel" id="contact-phone" name="Телефон"
+                       placeholder="Вашият телефон">
+
+                <label for="contact-message">Вашето съобщение</label>
+                <textarea id="contact-message" name="Съобщение"
+                          rows="5" placeholder="С какво можем да помогнем?"
+                          required></textarea>
+
+                <button type="submit" class="contact-submit">
+                    Изпрати съобщение
+                </button>
+
+            </form>
+        </div>
+
+        <div class="contact-map-wrap">
+            <h3>Къде се намираме</h3>
+
+            <p>
+                Пчеларска ферма „Гуделов“ — Фирма „Биомедеск“ ЕООД.
+            </p>
+
+            <div class="contact-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=42.133928,25.052082&z=14&output=embed"
+                    title="Местоположение на пчеларска ферма Гуделов"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <a class="map-link"
+               href="https://www.google.com/maps?q=42.133928,25.052082"
+               target="_blank"
+               rel="noopener noreferrer">
+                Отвори в Google Maps →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer id="footer">
+
+        <div class="container">
+
+            
+
+        </div>
+
+
+        <div class="copyright">
+            &copy; Кошерчето. Всички права запазени.
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
 </body>
 </html>
